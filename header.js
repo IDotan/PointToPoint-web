@@ -62,6 +62,11 @@ function menu_click(event) {
             }, close_timer.countdown);
             close_timer.close_win = setTimeout(tooltip_timer_before, close_timer.countdown + 100);
             break;
+        case "Contact me":
+            close_mobile_menu();
+            document.getElementById("tooltips").classList.remove("closed");
+            document.getElementById("tooltip_contact").classList.add("visible");
+            break;
         default:
             close_mobile_menu()
             break;

@@ -7,6 +7,7 @@ body {
     background-color: #797979;
     margin: 0;
     min-width: 350px;
+    overflow: hidden;
 }
 
 header {
@@ -200,8 +201,8 @@ header {
 .timer_half::before {
     content: "";
     position: absolute;
-    width: 105%;
-    height: 105%;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -215,6 +216,20 @@ header {
     transform: rotate(180deg);
     transform-origin: 0% 50%;
     transition: transform var(--hint-countdown) linear;
+}
+
+/* tooltip contact me */
+
+.contact_links {
+    display: block;
+    width: max-content;
+    margin-bottom: 0.5em;
+    text-decoration: none;
+    color: #000000;
+}
+
+#tooltip_contact p {
+    max-width: 45vw;
 }
 
 /* main */
@@ -375,23 +390,41 @@ header {
     display: none;
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2rem;
+    text-align: center;
+    border-top: 0.1rem solid #000000;
+    background-color: #5a5a5a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a:link, footer a:visited {
+    color: #dbdbdb;
+    text-decoration: none;
+}
+
 /* mobile side menu - horizontal viewpoint */
 
-@media only screen and (min-aspect-ratio: 1/1.1) and (max-height: 450px) and (max-width: 1024px) {
+@media only screen and (min-aspect-ratio: 1/2) and (max-height: 450px) and (max-width: 1024px) {
     header {
         height: 100vh;
         width: 3em;
         border-right: 0.2rem solid;
     }
-    #tooltip_goal p {
-        max-width: 35vw;
-    }
-    #tooltip_hint p {
+    #tooltip_goal p, #tooltip_hint p {
         max-width: 35vw;
     }
     #game_section {
         margin-top: 0;
         margin-left: 3em;
+    }
+    footer {
+        display: none;
     }
 }
 
@@ -459,12 +492,13 @@ header {
         height: 3rem;
         border-bottom: 0;
         border-right: 0.2rem solid #000000;
+        background-color: unset;
     }
     #header_links::before {
         content: none;
     }
-    #tooltip_goal p {
-        max-width: 25vw;
+    #tooltip_goal p, #tooltip_contact p {
+        max-width: 20vw;
     }
     #tooltip_hint p {
         max-width: 15vw;
