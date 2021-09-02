@@ -383,7 +383,8 @@ class Puzzle {
             };
         };
         // switch tiles
-        if (tile_index != -1) {
+        if ((tile_index != -1) &&
+            (document.getElementsByClassName('tile')[tile_index].className != this.#tiles_data.draging_tile.className)) {
             const temp = document.getElementsByClassName('tile')[tile_index];
             document.getElementsByClassName('tile')[tile_index].outerHTML = this.#tiles_data.draging_tile.outerHTML;
             this.#tiles_data.draging_tile.outerHTML = temp.outerHTML;
