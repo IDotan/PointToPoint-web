@@ -60,7 +60,7 @@ function menu_click(event) {
                 document.getElementById("tooltips").classList.add("closed");
                 document.getElementById("tooltip_hint").classList.remove("visible");
             }, close_timer.countdown);
-            close_timer.close_win = setTimeout(tooltip_timer_before, close_timer.countdown + 1);
+            close_timer.close_win = setTimeout(tooltip_timer_before, close_timer.countdown + 100);
             break;
         default:
             close_mobile_menu()
