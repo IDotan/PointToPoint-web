@@ -49,7 +49,7 @@ class Puzzle {
     */
     #tiles_shuffle() {
         for (let i = this.#tiles_arry.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * i);
+            const j = Math.floor(Math.random() * (i + 1));
             this.#tiles_arry[i][0] = Math.floor(Math.random() * 4);
             const temp = this.#tiles_arry[i];
             this.#tiles_arry[i] = this.#tiles_arry[j];
