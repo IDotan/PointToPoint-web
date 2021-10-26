@@ -93,6 +93,7 @@ header {
 }
 
 #header_links>div {
+    position: relative;
     font-size: 2rem;
     padding: 0.5em 0;
     background-color: #939393;
@@ -294,6 +295,7 @@ header {
     height: 5em;
     overflow: hidden;
     border: 0.4em solid transparent;
+    box-shadow: 0 0 0.5em #000;
 }
 
 .tile.selected {
@@ -363,7 +365,6 @@ header {
 }
 
 .btn_spin:hover {
-    color: blue;
     animation: btn_spin_left 3s linear 1s infinite;
     --spin-direction: -45deg
 }
@@ -495,6 +496,16 @@ footer a:link, footer a:visited {
     }
     #header_links::before {
         content: none;
+    }
+    #header_links>div:hover::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: #3131319e;
+        z-index: -1;
     }
     #tooltip_goal p, #tooltip_contact p {
         max-width: 20vw;
